@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Reminder Email From TCEQ-Form</title>
+<base>
+<style type="text/css">
+body {
+	width: 90%;
+	margin: 40px auto;
+	font-family: 'trebuchet MS', 'Lucida sans', Arial;
+	font-size: 14px;
+	color: #444;
+}
+
+table {
+	*border-collapse: collapse; /* IE7 and lower */
+	border-spacing: 0;
+	width: 100%;
+}
+
+.bordered {
+	border: solid #ccc 1px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 1px 1px #ccc;
+	-moz-box-shadow: 0 1px 1px #ccc;
+	box-shadow: 0 1px 1px #ccc;
+}
+
+.bordered tr:hover {
+	background: #fbf8e9;
+	-o-transition: all 0.1s ease-in-out;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+.bordered td, .bordered th {
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+}
+
+.bordered th {
+	background-color: #dce9f9;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc),
+		to(#dce9f9));
+	background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+	background-image: -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+	background-image: -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+	background-image: -o-linear-gradient(top, #ebf3fc, #dce9f9);
+	background-image: linear-gradient(top, #ebf3fc, #dce9f9);
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+	border-top: none;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.bordered td:first-child, .bordered th:first-child {
+	border-left: none;
+}
+
+.bordered th:first-child {
+	-moz-border-radius: 6px 0 0 0;
+	-webkit-border-radius: 6px 0 0 0;
+	border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+	-moz-border-radius: 0 6px 0 0;
+	-webkit-border-radius: 0 6px 0 0;
+	border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child {
+	-moz-border-radius: 6px 6px 0 0;
+	-webkit-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+	-moz-border-radius: 0 0 0 6px;
+	-webkit-border-radius: 0 0 0 6px;
+	border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+	-moz-border-radius: 0 0 6px 0;
+	-webkit-border-radius: 0 0 6px 0;
+	border-radius: 0 0 6px 0;
+}
+
+/*----------------------*/
+.zebra td, .zebra th {
+	padding: 10px;
+	border-bottom: 1px solid #f2f2f2;
+}
+
+.zebra tbody tr:nth-child(even) {
+	background: #f5f5f5;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+}
+
+.zebra th {
+	text-align: left;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+	border-bottom: 1px solid #ccc;
+	background-color: #eee;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5),
+		to(#eee));
+	background-image: -webkit-linear-gradient(top, #f5f5f5, #eee);
+	background-image: -moz-linear-gradient(top, #f5f5f5, #eee);
+	background-image: -ms-linear-gradient(top, #f5f5f5, #eee);
+	background-image: -o-linear-gradient(top, #f5f5f5, #eee);
+	background-image: linear-gradient(top, #f5f5f5, #eee);
+}
+
+.zebra th:first-child {
+	-moz-border-radius: 6px 0 0 0;
+	-webkit-border-radius: 6px 0 0 0;
+	border-radius: 6px 0 0 0;
+}
+
+.zebra th:last-child {
+	-moz-border-radius: 0 6px 0 0;
+	-webkit-border-radius: 0 6px 0 0;
+	border-radius: 0 6px 0 0;
+}
+
+.zebra th:only-child {
+	-moz-border-radius: 6px 6px 0 0;
+	-webkit-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+}
+
+.zebra tfoot td {
+	border-bottom: 0;
+	border-top: 1px solid #fff;
+	background-color: #f1f1f1;
+}
+
+.zebra tfoot td:first-child {
+	-moz-border-radius: 0 0 0 6px;
+	-webkit-border-radius: 0 0 0 6px;
+	border-radius: 0 0 0 6px;
+}
+
+.zebra tfoot td:last-child {
+	-moz-border-radius: 0 0 6px 0;
+	-webkit-border-radius: 0 0 6px 0;
+	border-radius: 0 0 6px 0;
+}
+
+.zebra tfoot td:only-child {
+	-moz-border-radius: 0 0 6px 6px;
+	-webkit-border-radius: 0 0 6px 6px border-radius: 0 0 6px 6px
+}
+</style>
+</head>
+<body>
+	<!-- 	<img alt="Img"
+		src="http://ambrrc.cloudapp.net:8080/TCEQForm/images/banner-generic-applications-1024x73.jpg"> -->
+	<!-- <table class="bordered">
+		<tr>
+			<td>File Link</td>
+			<td><a href="${.dat}">${DatFileName}</a></td>
+		</tr>
+	</table> -->
+
+
+
+	<table class="zebra">
+		<!-- Section 1 Application for Reciprocity License Type of Application -->
+		<tr>
+			<td colspan="2"><strong>Type of License Section</strong></td>
+		</tr>
+		<tr>
+			<td>Licensed in another state or country</td>
+			<td>${licensedInAnotherState}</td>
+		</tr>
+		<tr>
+			<td>Type and/or Class</td>
+			<td>${applicationForReciprocity.type}</td>
+		</tr>
+		<tr>
+			<td>Issuing State or Country</td>
+			<td>${applicationForReciprocity.issuingStateOrCountry}</td>
+		</tr>
+		<tr>
+			<td>Issue Date</td>
+			<td>${applicationForReciprocity.issueDate}</td>
+		</tr>
+		<tr>
+			<td>Expiration Date</td>
+			<td>${applicationForReciprocity.expirationDate}</td>
+		</tr>
+		<tr>
+			<td>Copy Of License</td>
+			<td>${copyOfLicense}</td>
+		</tr>
+		<tr>
+			<td>Type of License Application</td>
+			<td>${licenseType}</td>
+		</tr>
+
+		<!-- Section 2 C -->
+		<tr>
+			<td colspan="2"><strong>Personal Information Section</strong></td>
+		</tr>
+		<tr>
+			<td>Last Name</td>
+			<td>${lastName}</td>
+		</tr>
+		<tr>
+			<td>First Name</td>
+			<td>${firstName}</td>
+		</tr>
+		<tr>
+			<td>Middle Name</td>
+			<td>${middleName}</td>
+		</tr>
+		<tr>
+			<td>Name Prefix</td>
+			<td>${namePrefix}</td>
+		</tr>
+		<tr>
+			<td>Name Suffix</td>
+			<td>${nameSuffix}</td>
+		</tr>
+		<tr>
+			<td>SSN</td>
+			<td>${SSN}</td>
+		</tr>
+		<tr>
+			<td>Date Of Birth</td>
+			<td>${dateOfBirth}</td>
+		</tr>
+		<tr>
+			<td>Customer Role</td>
+			<td>${customerRole}</td>
+		</tr>
+		<tr>
+			<td>Ownership Type</td>
+			<td>${owershipType}</td>
+		</tr>
+		<!-- Section 3 Contact Information -->
+		<tr>
+			<td colspan="2"><strong>Contact Information Section</strong></td>
+		</tr>
+		<tr>
+			<td>Are you inside US?</td>
+			<td>${insideUS}</td>
+			<!-- need add -->
+		</tr>
+		<tr>
+			<td>Current mailing address</td>
+			<td>${currentMaillingAddress}</td>
+		</tr>
+		<!-- <tr>
+			<td>Country</td>
+			<td>${country}</td>
+		</tr>
+		<tr>
+			<td>Mailling Zone</td>
+			<td>${maillingZone}</td>
+		</tr>
+		<tr>
+			<td>Mailing Code</td>
+			<td>${mailingCode}</td>
+		</tr>
+		<tr>
+			<td>Postal Features</td>
+			<td>${postalFeatures}</td>
+		</tr> -->
+		<tr>
+			<td>Mailing Address</td>
+			<td>${address}</td>
+		</tr>
+		<tr>
+			<td>City</td>
+			<td>${city}</td>
+		</tr>
+		<tr>
+			<td>State</td>
+			<td>${state}</td>
+		</tr>
+		<tr>
+			<td>ZipCode</td>
+			<td>${zipCode}</td>
+		</tr>
+		<tr>
+			<td>Day/Work Phone</td>
+			<td>${workPhone}</td>
+		</tr>
+		<tr>
+			<td>Evening/Home Phone</td>
+			<td>${homePhone}</td>
+		</tr>
+		<tr>
+			<td>Alternative Contact Phone</td>
+			<td>${cellPhone}</td>
+		</tr>
+		<tr>
+			<td>Work Email</td>
+			<td>${workEmail}</td>
+		</tr>
+		<tr>
+			<td>Personal Email</td>
+			<td>${personalEmail}</td>
+		</tr>
+		<!-- Section 4 Qualifications -->
+		<tr>
+			<td colspan="2"><strong>Qualifications Section</strong></td>
+		</tr>
+		<tr>
+			<td colspan="2">Required and Completed TCEQ Approved
+				Occupational Training</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table class="zebra">
+					<tr>
+						<td>Training Institution/School/Company</td>
+						<td>Course Title</td>
+						<td>Location(City)</td>
+						<td>Month/Year</td>
+						<td>Credit Hours</td>
+					</tr>
+					${trainingInfos}
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">Other Current or Previous Professional and
+				Occupational Licenses</td>
+		</tr>
+		<tr>
+			<td>Type and/or Class</td>
+			<td>${occupationalLicenses.type}</td>
+		</tr>
+		<tr>
+			<td>Issuing Agency</td>
+			<td>${occupationalLicenses.issuingAgency}</td>
+		</tr>
+		<tr>
+			<td>Issuance Date</td>
+			<td>${occupationalLicenses.issuanceDate}</td>
+		</tr>
+		<tr>
+			<td>Expiration Date</td>
+			<td>${occupationalLicenses.expirationDate}</td>
+		</tr>
+		<tr>
+			<td colspan="2">Education</td>
+		</tr>
+		<tr>
+			<td>Education Year of HS Graduation or GED completion</td>
+			<td>${educationBackground.educationYearOfGraduation}</td>
+		</tr>
+		<tr>
+			<td>Highest level of education obtained</td>
+			<td>${educationBackground.highestLevelOfEducation}</td>
+		</tr>
+		<tr>
+			<td>Number of semester hours completed</td>
+			<td>${educationBackground.numberOfSemesterhours}</td>
+		</tr>
+		<tr>
+			<td>Name of College or University</td>
+			<td>${educationBackground.collegeName}</td>
+		</tr>
+		<tr>
+			<td>Major/Minor</td>
+			<td>${educationBackground.major}</td>
+		</tr>
+		<!-- Section 5 Supporting Document -->
+		<tr>
+			<td colspan="2"><strong>Supporting Document's Upload
+					Section</strong></td>
+		</tr>
+		<tr>
+			<td>Description of Attachments</td>
+			<td>${attachementsDescription}</td>
+		</tr>
+
+		<tr>
+			<td>Attachments</td>
+			<td></td>
+		</tr>
+		<!-- Attachments -->
+		${attachemntUrls}
+		<!-- --- -->
+
+		<!-- Section 6 Fees -->
+		<tr>
+			<td colspan="2"><strong>Fees Section</strong></td>
+		</tr>
+		<tr>
+			<td>Voucher Number</td>
+			<td>${voucherNumber}</td>
+		</tr>
+		<tr>
+			<td>United States military veteran</td>
+			<td>${militaryVeteran}</td>
+		</tr>
+		<!-- Section 7  Affidavit  -->
+		<tr>
+			<td colspan="2"><strong>Affidavit Section</strong></td>
+		</tr>
+		<tr>
+			<td>Affidavit</td>
+			<td>${affidavit.affidavit}</td>
+		</tr>
+		<tr>
+			<td>Signature</td>
+			<td>${affidavit.signature}</td>
+		</tr>
+		<tr>
+			<td>Date</td>
+			<td>${affidavit.date}</td>
+		</tr>
+		<tr>
+			<td>Attachments amount</td>
+			<td>${attachemntsAmount}</td>
+		</tr>
+	</table>
+</body>
+</html>

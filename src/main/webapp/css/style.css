@@ -1,0 +1,434 @@
+/*****************************   
+For TCEQ use only
+******************************/
+
+/* reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.input_gray {
+	background-color: #eeeeec
+}
+
+.upload_div {
+	border: 1px solid #a7a7a7;
+	border-radius: 2px;
+	color: #666666;
+}
+/* Background images */
+body {
+	background: #fff;
+}
+
+.my_button {
+	background-color: #526d82;
+	border-radius: 6px;
+	width: 90px;
+	height: 36px;
+	color: #ffffff;
+}
+
+.disable_button {
+	background-color: #888a85;
+	border-radius: 6px;
+	width: 90px;
+	height: 36px;
+	color: #ffffff;
+}
+
+.disabled_tab {
+	color: #999999;
+}
+
+#wrapper {
+	background: #fff;
+	width: auto;
+	margin: 0 auto;
+	max-width: 1024px;
+	font-size: 15px;
+}
+
+/*Header*/
+#header {
+	background-image: url(../images/banner-generic-applications-1024x73.jpg);
+	background-repeat: none;
+	position: relative;
+	top: 10px;
+	display: block;
+	width: 1024px;
+	height: 73px;
+}
+
+#header-text {
+	position: absolute;
+	background: none;
+	font-size: 12px;
+	text-indent: -9999px;
+}
+
+/*Top navigation*/
+#topnav ul {
+	margin: 0;
+}
+
+#topnav ul li {
+	position: relative;
+	top: 45px;
+	float: right;
+	list-style-type: none;
+}
+
+#topnav ul li a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background: #2a434f;
+	color: #fff;
+	display: block;
+	padding: 0 20px;
+	line-height: 24px;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 4px solid #000;
+}
+
+#topnav ul li a:hover {
+	background: #961c1f;
+	text-decoration: underline;
+}
+
+#topnav li#selectednav a {
+	background: #526b87;
+}
+
+#content {
+	padding: 20px;
+}
+
+.clear {
+	clear: both;
+}
+
+/* << Questions or Comments linked text*/
+#questionscomments a {
+	float: right;
+	position: absolute;
+	top: 14px;
+	right: 16px;
+	color: #000;
+	text-decoration: none;
+}
+
+#questionscomments a:hover {
+	text-decoration: underline;
+}
+
+/* Colors and fonts */
+body {
+	color: #000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 62.75%;
+}
+
+h1, h2, h3, h4, h5, h6 .h5 {
+	font-family: verdana;
+	color: #465E65;
+}
+
+h1 {
+	color: #465e65;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	letter-spacing: .005em;
+	border: 0;
+}
+
+p {
+	padding: 0.5em;
+}
+
+/*
+container form*/
+.space-sm-mb {
+	margin-bottom: 15px;
+}
+
+label {
+	color: #474747;
+}
+
+.line-input {
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px #ccc solid;
+	height: 28px;
+	box-shadow: none;
+	margin-bottom: 10px;
+	font-weight: normal;
+}
+
+.table-input {
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	height: 28px;
+}
+
+.form-inline .form-group {
+	margin-bottom: 5px;
+}
+
+.form-radio>.radio-inline {
+	width: 24%;
+}
+
+.radio-inline+.radio-inline {
+	margin-left: 0;
+}
+
+.radio-inline, .radio-inline+.radio-inline {
+	margin-bottom: 5px;
+}
+
+.radio-inline>.line-input {
+	margin-bottom: 0;
+}
+
+/*------------------------------------------------------
+  F O O T E R     E L E M E N T S
+------------------------------------------------------*/
+#footer {
+	background: #ffffff;
+	border-top: 2px dotted gray;
+	padding: 5px 45px;
+	margin: 30px 0 0 0px;
+	font-size: 12px;
+}
+
+#footer a:link {
+	color: #455560;
+}
+
+#footer a:hover {
+	color: #961c1f;
+	text-decoration: underline;
+}
+
+#footer a:visited {
+	color: #455560;
+}
+
+#footer-icons {
+	margin-bottom: 35px;
+}
+
+.p1 {
+	color: #474747;
+}
+
+.mar {
+	margin-left: 16px;
+}
+
+.redio {
+	padding: 0px 200px 0px 0px;
+}
+
+.choose {
+	margin-left: 16px;
+	border-radius: 6px;
+	width: 90px;
+	height: 36px;
+}
+
+.file {
+	position: relative;
+	display: inline-block;
+	background: #efeef4;
+	border: 1px solid;
+	border-radius: 4px;
+	padding: 4px 12px;
+	overflow: hidden;
+	color: #000000;
+	text-decoration: none;
+	text-indent: 0;
+	line-height: 20px;
+	font-weight: bold;
+}
+
+.showFileName {
+	position: relative;
+	display: inline-block;
+	background: #efeef4;
+	padding: 4px 12px;
+	overflow: hidden;
+	color: #000004;
+	text-decoration: none;
+	text-indent: 0;
+	line-height: 20px;
+	font-weight: bold;
+}
+
+.file input {
+	position: absolute;
+	font-size: 100px;
+	right: 0;
+	top: 0;
+	opacity: 0;
+}
+
+.file:hover {
+	background: #a4a7ac;
+	border-color: #a4a7ac;
+	color: #efeef4;
+	text-decoration: none;
+}
+
+.fileerrorTip {
+	color: red;
+	font-size: small;
+}
+
+.reminder_text {
+	color: red;
+	font-size: 14px;
+}
+
+.req::after {
+	color: red;
+	/*
+	color: rgb(169, 68, 66);
+	content: " * Required";
+	*/
+	content: " * ";
+	font-size: 85%;
+	font-weight: normal;
+}
+
+.req2::after {
+	color: red;
+	/*
+	color: rgb(169, 68, 66);
+	*/
+	content: " Acknowledgment that you have read and understood the affidavit is required to proceed.";
+	font-size: 100%;
+	font-weight: normal;
+}
+
+.aster-tips {
+	color: red;
+	font-color: red;
+	font-size: 90%;
+	font-weight: normal;
+}
+
+.ser_number {
+	font-weight: bold;
+	font-family: verdana;
+	color: #000000;
+	padding: 0px 12px;
+}
+
+#contact_info_section .col-md-5 {
+	width: 100%
+}
+
+#contact_info_section input {
+	width: 370px
+}
+
+.width5 {
+	width: 700px;
+}
+
+.width6 {
+	width: 60px;
+}
+
+.width7 {
+	width: 770px;
+}
+
+.width8 {
+	width: 80px;
+}
+
+.width9 {
+	width: 90px;
+}
+
+.DivSelect {
+	float: left;
+	position: relative;
+	background-color: transparent;
+	height: 17px;
+	overflow: hidden;
+	border-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-style: none;
+}
+
+.SelectList {
+	position: relative;
+	background-color: transparent;
+	TOP: -2px;
+	left: -2px;
+	border-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-style: none;
+	display: block;
+	height: 20px;
+	overflow: hidden;
+}
+
+.no-close .ui-dialog-titlebar-close {
+	display: none;
+	font-size:16px;
+}
+.ui-dialog .ui-dialog-title { font: 200% "Trebuchet MS" , sans-serif;font-weight:bold;float: left; margin: .1em 16px .1em 0; height:15px }
+
+.ui-dialog-buttonpane {
+	font: 200% "Trebuchet MS";
+}
+.dialog_button{
+	width:50px;
+	height:25px;
+}
+.ol-li-ol{
+	padding-left: 25px;
+}
+#ui-datepicker-div{
+	font-size:2.0em;
+}
+
+input {
+	font-weight: normal;
+}
+fieldset{
+	border: 0 none;
+	margin-bottom: 25px;
+}
+legend h5{
+	padding-top: 0px;
+	padding-bottom: 15px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+legend{
+	border: 0 none;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}

@@ -1,0 +1,4 @@
+__MACOSX/
+.idea/
+.settings/
+*.DS_Store

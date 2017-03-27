@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta http-equiv="Expires" CONTENT="0">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Pragma" CONTENT="no-cache">
+<title>TEXAS COMMISSION ON ENVIRONMENTAL QUALITY</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!-- jquery validate -->
+<script src="js/jquery-2.2.3.min.js"></script>
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+<!--jquery ui and Jquery validate plugin -->
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.formatter.min.js"></script>
+<!--  -->
+<script src="js/index.js"></script>
+<script src="js/validate.expand.js"></script>
+</head>
+<body>
+
+	<div id="dialog" title="Reminder Message" style="font-size: 15px;">
+		<p id="dialog_msg"></p>
+	</div>
+
+	<div id="wrapper">
+		<div id="header">
+			<h1 id="header-text">Texas Commission on Environmental Quality</h1>
+			<div id="questionscomments">
+				<a
+					href="mailto:licenses@tceq.texas.gov?subject=Question about e-Application">Questions
+					or Comments &gt;&gt;</a>
+			</div>
+			<!-- #questionscomments -->
+			<div id="topnav" class="clear">
+				<ul>
+					<li><a href="https://www.tceq.texas.gov/">TCEQ Home</a></li>
+					<li><a href="https://www.tceq.texas.gov/licensing/">Occupational Licensing</a></li>
+				</ul>
+			</div>
+			<!-- #topnav -->
+		</div>
+
+
+
+		<!-- #header -->
+		<div id="content">
+
+			<div class="container-fluid">
+				<form action="submitForm" method="post" id="tceqform"
+					enctype="multipart/form-data">
+					<h2>Occupational Licensing Electronic License Application</h2>
+					<div style="font-size: small">
+						<ul id="myTab" class="nav nav-tabs">
+							<li id="myTab1" class="active"><a href="#panel-part1"
+								data-toggle="tab" onclick="checkValid(this)">Type of License</a></li>
+							<li id="myTab2"><a href="#panel-part2" data-toggle="tab"
+								onclick="checkValid(this)">Personal Information</a></li>
+							<li id="myTab3"><a href="#panel-part3" data-toggle="tab"
+								onclick="checkValid(this)">Contact Information</a></li>
+							<li id="myTab4"><a href="#panel-part4" data-toggle="tab"
+								onclick="checkValid(this)">Qualifications</a></li>
+							<li id="myTab5"><a href="#panel-part5" data-toggle="tab"
+								onclick="checkValid(this)">Supporting Documents</a></li>
+							<li id="myTab6"><a href="#panel-part6" data-toggle="tab"
+								onclick="feeChecker(this)">Fees</a></li>
+							<li id="myTab7"><a href="#panel-part7" data-toggle="tab"
+								onclick="checkValid(this)">Affidavit</a></li>
+						</ul>
+					</div>
+
+					<div id="myTabContent" class="tab-content">
+
+						<div class="tab-pane in active" id="panel-part1">
+							<div class="panel-body">
+
+								<h4>1. Application for Reciprocity</h4>
+
+								<div class="row space-sm-mb">
+									<div class="col-md-12 space-sm-mb">
+										<fieldset style="margin-bottom: 0px;">
+											<legend>
+												<h5 id="licensedInAnotherState">
+													<strong>Are you applying for reciprocity for a
+														license you currently hold from another state or country?</strong>
+												</h5>
+											</legend>
+
+											<div class="form-radio">
+
+												<label class="radio-inline"> <input type="radio"
+													name="licensedInAnotherState" value="YES" id="radioYes">Yes
+												</label> <label class="radio-inline"> <input type="radio"
+													checked="checked" name="licensedInAnotherState" value="No"
+													id="radioNo">No
+												</label>
+											</div>
+										</fieldset>
+									</div>
+									<div id="licensedInAnother_DIV">
+										<h5>
+											<span id="licenseCopyFile"></span>
+										</h5>
+										<div class="col-md-6">
+											<label style="width: 100%">Issue Date:<input
+												type="text" class="line-input form-control"
+												name="applicationForReciprocity.issueDate"
+												placeholder="MM/DD/YYYY" maxlength=10>
+											</label>
+										</div>
+										<div class="col-md-6">
+											<label style="width: 100%">Expiration Date: <input
+												type="text" class="line-input form-control"
+												name="applicationForReciprocity.expirationDate"
+												placeholder="MM/DD/YYYY" maxlength=10>
+											</label>
+										</div>
+										<div class="col-md-6">
+											<label style="width: 100%">Type and/or Class: <input
+												type="text" class="line-input form-control"
+												name="applicationForReciprocity.type" maxlength=100>
+											</label>
+										</div>
+										<div class="col-md-6">
+											<label style="width: 100%">Issuing State or Country:<input
+												type="text" class="line-input form-control"
+												name="applicationForReciprocity.issuingStateOrCountry"
+												maxlength=100>
+											</label>
+										</div>
+
+
+
+										<div class="col-md-12">
+											<p>
+												<strong>Attach Copy of License</strong>
+											</p>
+
+											<div>
+												<a href="javascript:;" class="file"> <label> <strong
+														id="fileSelectBtn">Upload File</strong> <input
+														id="licenseattachfile" type="file" name="licenseCopyFile">
+												</label>
+												</a> <strong id="showFileName1" class="showFileName">No
+													File selected</strong>
+												<p id="showErrorTip" class="fileerrorTip"></p>
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+
+								<div id="LT">
+
+									<div>
+										<h4 class="req">2. Type of license application (Primary
+											Business)</h4>
+										<div class="col-md-12">
+											<h5>Note:</h5>
+											<h5>
+												Select one type of license only.</br>If you are applying for
+												multiple license types, please fill out a separate
+												application for each license type.</br> A fee must be paid in
+												order to submit an application unless eligible for military
+												exemption.
+											</h5>
+										</div>
+										<span id="typeOfLicenseApp.WaterLevel"></span>
+										<div class="col-md-12">
+											<fieldset>
+												<legend>
+													<h5>
+
+														<strong>Water Operators</strong> <a
+															href="https://www.tceq.texas.gov/licensing/licenses/waterlic"
+															target="_blank"> <img alt="help icon"
+															src="images/imgpsh_fullsize.jpeg" width="30px"
+															height="30px">
+
+														</a>
+
+													</h5>
+												</legend>
+
+												<div class="form-radio">
+													<label class="radio-inline"><input type="radio"
+														value="A" name="typeOfLicenseApp.WaterLevel"
+														id="radioWaterA" class="WSC">A</label> <label
+														class="radio-inline"><input type="radio" value="B"
+														name="typeOfLicenseApp.WaterLevel" id="radioWaterB"
+														class="WSC">B</label> <label class="radio-inline"><input
+														type="radio" value="C" name="typeOfLicenseApp.WaterLevel"
+														id="radioWaterC" class="WSC">C</label> <label
+														class="radio-inline"><input type="radio" value="D"
+														name="typeOfLicenseApp.WaterLevel" id="radioWaterD"
+														class="WSC">D</label>
+
+												</div>
+
+
+
+												<div class="form-radio" id="divWaterHideOrShow">
+													<h5>
+														<span id="typeOfLicenseApp.WaterType"></span>
+													</h5>
+													<label class="radio-inline"> <input type="radio"
+														value="Distribution" id="Distribution"
+														name="typeOfLicenseApp.WaterType" class="WSC">Distribution
+													</label> <label class="radio-inline"> <input type="radio"
+														value="Ground" name="typeOfLicenseApp.WaterType"
+														class="WSC">Ground
+													</label> <label class="radio-inline"> <input type="radio"
+														value="Surface" name="typeOfLicenseApp.WaterType"
+														class="WSC">Surface
+													</label>
+												</div>
+											</fieldset>
+
+											<fieldset>
+												<legend>
+													<h5>
+														<strong>Wastewater Operators</strong> <a
+															href="https://www.tceq.texas.gov/licensing/licenses/wwlic"
+															target="_blank"> <img alt="help icon"
+															src="images/imgpsh_fullsize.jpeg" width="30px"
+															height="30px">
+														</a>
+													</h5>
+												</legend>
+												<div class="p1">
+													Treatment&nbsp;&nbsp;&nbsp;&nbsp;
+
+													<div class="form-radio">
+														<label class="radio-inline"><input type="radio"
+															value="A" name="typeOfLicenseApp.wasteWater" class="WQC">A</label>
+														<label class="radio-inline"><input type="radio"
+															value="B" name="typeOfLicenseApp.wasteWater" class="WQC">B</label>
+														<label class="radio-inline"><input type="radio"
+															value="C" name="typeOfLicenseApp.wasteWater" class="WQC">C</label>
+														<label class="radio-inline"><input type="radio"
+															value="D" name="typeOfLicenseApp.wasteWater" class="WQC">D</label>
+													</div>
+
+												</div>
+
+												<div class="p1">
+													Collection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+													<div class="form-radio">
+														<label class="radio-inline"><input type="radio"
+															value="I" name="typeOfLicenseApp.wasteWater" class="WQC">I</label>
+														<label class="radio-inline"><input type="radio"
+															value="II" name="typeOfLicenseApp.wasteWater" class="WQC">II</label>
+														<label class="radio-inline"><input type="radio"
+															value="III" name="typeOfLicenseApp.wasteWater"
+															class="WQC">III</label>
+													</div>
+												</div>
+											</fieldset>
+
+										</div>
+
+										<h5 class="mar">
+											<label> <strong style="color: #465E65">Backflow
+													Prevention Assembly Tester (BPAT)</strong> <input type="radio"
+												style="padding-top: 1px" name="typeOfLicenseApp.BPAT"
+												value="BPAT" class="BAT"
+												style="vertical-align: text-bottom;margin-bottom: 2px;">
+											</label> <a
+												href="https://www.tceq.texas.gov/licensing/licenses/bpatlic"
+												target="_blank"> <img alt="help icon"
+												src="images/imgpsh_fullsize.jpeg" width="30px" height="30px"
+												style="padding-bottom: 5px">
+											</a>
+										</h5>
+
+										<div style="margin-top: 25px; margin-bottom: 25px">
+											<h5 class="mar">
+												<label> <strong style="color: #465E65">Customer
+														Service Inspector (CSI)</strong> <input type="radio"
+													name="typeOfLicenseApp.CSI" value="CSI" class="CSI"
+													alt="CSI"
+													style="vertical-align: text-bottom; margin-bottom: 2px;">
+												</label> <a
+													href="https://www.tceq.texas.gov/licensing/licenses/csilic"
+													target="_blank"> <img alt="help icon"
+													src="images/imgpsh_fullsize.jpeg" width="30px"
+													height="30px" style="padding-bottom: 5px">
+												</a>
+											</h5>
+										</div>
+									</div>
+
+									<div class="mar">
+										<fieldset>
+											<legend>
+												<h5>
+													<strong>Landscape Irrigator, Technician and
+														Inspector</strong> <a
+														href="https://www.tceq.texas.gov/licensing/licenses/lilic"
+														target="_blank"> <img alt="help icon"
+														src="images/imgpsh_fullsize.jpeg" width="30px"
+														height="30px">
+													</a>
+												</h5>
+											</legend>
+											<div class="form-radio">
+												<label class="radio-inline"><input type="radio"
+													value="Irrigator"
+													name="typeOfLicenseApp.landscapeIrrigation" class="IRR">Irrigator</label>
+												<label class="radio-inline"><input type="radio"
+													value="Inspector"
+													name="typeOfLicenseApp.landscapeIrrigation" class="IRR">Inspector</label>
+												<label class="radio-inline"><input type="radio"
+													value="Technician"
+													name="typeOfLicenseApp.landscapeIrrigation" class="IRR">Technician</label>
+											</div>
+										</fieldset>
+
+										<fieldset>
+											<legend>
+												<h5>
+													<strong>Water Treatment Specialist (WTS)</strong> <a
+														href="https://www.tceq.texas.gov/licensing/licenses/wtslic"
+														target="_blank"> <img alt="help icon"
+														src="images/imgpsh_fullsize.jpeg" width="30px"
+														height="30px">
+													</a>
+												</h5>
+											</legend>
+											<div class="form-radio">
+												<label class="radio-inline"><input type="radio"
+													value="I" name="typeOfLicenseApp.WTS" class="ROC">I</label>
+												<label class="radio-inline"><input type="radio"
+													value="II" name="typeOfLicenseApp.WTS" class="ROC">II</label>
+												<label class="radio-inline"><input type="radio"
+													value="III" name="typeOfLicenseApp.WTS" class="ROC">III</label>
+
+											</div>
+										</fieldset>
+
+										<fieldset>
+											<legend>
+												<h5>
+													<strong>Municipal Solid Waste Operator (MSW)</strong> <a
+														href="https://www.tceq.texas.gov/licensing/licenses/licenses/mswlic"
+														target="_blank"> <img alt="help icon"
+														src="images/imgpsh_fullsize.jpeg" width="30px"
+														height="30px">
+													</a>
+												</h5>
+											</legend>
+											<div class="form-radio">
+												<label class="radio-inline"><input type="radio"
+													value="A" name="typeOfLicenseApp.MSW" class="STT">A</label>
+												<label class="radio-inline"><input type="radio"
+													value="B" name="typeOfLicenseApp.MSW" class="STT">B</label>
+											</div>
+										</fieldset>
+
+										<fieldset>
+											<legend>
+												<h5>
+													<strong>On-Site Sewage Systems (OSSFs), Including
+														Septic Tanks</strong> <a
+														href="https://www.tceq.texas.gov/licensing/licenses/ossflic"
+														target="_blank"> <img alt="help icon"
+														src="images/imgpsh_fullsize.jpeg" width="30px"
+														height="30px">
+													</a>
+												</h5>
+											</legend>
+											<div class="form-radio">
+												<label class="radio-inline" style="width: 32%"><input
+													type="radio" value="AP" name="typeOfLicenseApp.OSSF"
+													class="OIR">Apprentice</label> <label class="radio-inline"
+													style="width: 32%"><input type="radio" value="I"
+													name="typeOfLicenseApp.OSSF" class="OIR">Installer
+													I</label> <label class="radio-inline" style="width: 32%"><input
+													type="radio" value="II" name="typeOfLicenseApp.OSSF"
+													class="OIR">Installer II</label> <label
+													class="radio-inline" style="width: 32%"><input
+													type="radio" value="DR" name="typeOfLicenseApp.OSSF"
+													class="OIR">Designated Representative</label> <label
+													class="radio-inline" style="width: 32%"><input
+													type="radio" value="SE" name="typeOfLicenseApp.OSSF"
+													class="OIR">Site Evaluator</label> <label
+													class="radio-inline" style="width: 32%"><input
+													type="radio" value="MP" name="typeOfLicenseApp.OSSF"
+													class="AMP">Maintenance Provider</label> <label
+													class="radio-inline" style="width: 32%"><input
+													type="radio" value="MT" name="typeOfLicenseApp.OSSF"
+													class="AMP">Maintenance Technician</label>
+
+
+											</div>
+										</fieldset>
+
+										<fieldset>
+											<legend>
+												<h5>
+													<strong>Underground Storage Tank (UST) On-Site Supervisors</strong> <a
+														href="https://www.tceq.texas.gov/licensing/licenses/ust_lic.html"
+														target="_blank"> <img alt="help icon"
+														src="images/imgpsh_fullsize.jpeg" width="30px"
+														height="30px">
+													</a>
+												</h5>
+											</legend>
+											<div class="form-radio">
+												<label class="radio-inline"><input type="radio"
+													value="A" name="typeOfLicenseApp.UST" class="SLI">A</label>
+												<label class="radio-inline"><input type="radio"
+													value="B" name="typeOfLicenseApp.UST" class="SLI">
+													B</label> <label class="radio-inline"><input type="radio"
+													value="Combination" name="typeOfLicenseApp.UST" class="SLI">Combination</label>
+											</div>
+										</fieldset>
+
+
+										<h5>
+											<label> <strong style="color: #465E65">Leaking
+													Petroleum Storage Tank (LPST) Project Manager</strong> <input
+												type="radio" name="typeOfLicenseApp.LPST" value="PM"
+												class="PPM">
+											</label> <a
+												href="https://www.tceq.texas.gov/licensing/licenses/lpstlic"
+												target="_blank"> <img alt="help icon"
+												src="images/imgpsh_fullsize.jpeg" width="30px" height="30px"
+												style="padding-bottom: 5px">
+											</a>
+										</h5>
+									</div>
+								</div>
+							</div>
+							<div align="center">
+								<button class="my_button" onclick="next(this)">Next</button>
+							</div>
+							<div class="col-md-12">
+								<h5 style="color: red; padding-left: 16px">Red asterisk " *
+									" identifies a required field.</h5>
+							</div>
+						</div>
+
+						<div class="tab-pane" id="panel-part2">
+
+							<div class="panel-body">
+
+								<h4>1. Applicant’s Personal information Section</h4>
+
+								<div class="row space-sm-mb">
+									<div class="col-md-4">
+										<label style="width: 100%"><span class="req">Last
+												Name</span><input type="text" class="line-input form-control"
+											name="lastName" id="lastname" maxLength=30>
+										</label>
+
+									</div>
+									<div class="col-md-4">
+										<label style="width: 100%"><span class="req">First
+												Name</span> <input type="text" class="line-input form-control"
+											name="firstName" id="firstname" maxLength=30>
+										</label>
+									</div>
+									<div class="col-md-4">
+										<label style="width: 100%"><span>Middle Name</span> <input
+											type="text" class="line-input form-control" name="middleName" id="middlename"
+											onkeyup="this.value=this.value.replace(/\d/g,'')"
+											maxLength=30 title="Middle Name"> </label>
+									</div>
+
+									<div class="col-md-12 space-sm-mb">
+										<fieldset>
+											<legend>
+												<h5 class="req">
+													<strong> Name Prefix</strong>
+												</h5>
+											</legend>
+											<span id="title"></span>
+											<div class="form-radio" style="padding-left: 20px">
+												<label class="radio-inline"> <input type="radio"
+													name="title" value="Mr">Mr.
+												</label> <label class="radio-inline"> <input type="radio"
+													name="title" value="Mrs">Mrs.
+												</label> <label class="radio-inline"> <input type="radio"
+													name="title" value="Ms">Ms.
+												</label> <label class="radio-inline"> <input type="radio"
+													name="title" value="Dr">Dr.
+												</label>
+											</div>
+										</fieldset>
+									</div>
+
+									<div class="col-md-12 space-sm-mb">
+										<fieldset>
+											<legend>
+												<h5 id="prefixOfName">
+													<strong>Suffix</strong>
+												</h5>
+											</legend>
+											<div class="form-radio" style="padding-left: 20px">
+												<label class="radio-inline"> <input type="radio"
+													name="prefixOfName" value="Sr" class="lpst_suffix" /> Sr
+												</label> <label class="radio-inline"> <input type="radio"
+													name="prefixOfName" value="Jr" class="lpst_suffix" />Jr
+												</label> <label class="radio-inline"> <input type="radio"
+													value="I" name="prefixOfName" class="lpst_suffix" /> I
+												</label> <label class="radio-inline"> <input type="radio"
+													value="II" name="prefixOfName" class="lpst_suffix" />II
+												</label> <label class="radio-inline"> <input type="radio"
+													value="III" name="prefixOfName" class="lpst_suffix" />III
+												</label> <label class="radio-inline"> <input type="radio"
+													value="IV" name="prefixOfName" class="lpst_suffix" />IV
+												</label> <label class="radio-inline"> <input type="radio"
+													value="V" name="prefixOfName" class="lpst_suffix" />V
+												</label> <label class="radio-inline"> <input type="radio"
+													value="PhD" name="prefixOfName" class="lpst_suffix" />PhD
+												</label> <label class="radio-inline"> <input type="radio"
+													value="CPA" name="prefixOfName" class="lpst_suffix" />CPA
+												</label> <label class="radio-inline"> <input type="radio"
+													value="PE" name="prefixOfName" class="lpst_suffix" />PE
+												</label> <label class="radio-inline"> <input type="radio"
+													value="RS" name="prefixOfName" class="lpst_suffix" />RS
+												</label> <label class="radio-inline"> <input type="radio"
+													value="PG" name="prefixOfName" class="lpst_suffix" />PG
+												</label>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+
+								<div class="row space-sm-mb">
+									<h4 class="req">2. Social Security Number Or Tax ID</h4>
+									<div class="col-md-5">
+										<label>SSN/Tax ID:<input type="text"
+											class="line-input form-control" name="socialSecurityNumMask"
+											maxlength=11 autocomplete="off" placeholder="XXX-XX-XXXX"
+											id="socialSecurityNumId" style="font-weight: normal;">
+										</label>
+									</div>
+									<input type="text" id="realSSN" name="socialSecurityNum"
+										style="display: none;" title="Social security number">
+									<div class="col-md-12">
+										<h5>
+											<strong>Social Security Number Statement</strong>
+										</h5>
+										<p>The Texas Family Code requires the disclosure of your
+											SSN for purposes of assisting in the collection of child
+											support obligations. In compliance with the TGSL program,
+											your SSN may also be used to verify eligibility to renew a
+											license.</p>
+									</div>
+								</div>
+
+								<div class="row space-sm-mb">
+									<div class="col-md-5">
+										<h4 class="req">3. Date Of Birth</h4>
+
+										<input id="birthday_input" type="text"
+											class="line-input form-control" name="birthday_show"
+											placeholder="MM/DD/YYYY" maxlength=10> <input
+											name="birthday" id="birthday_real" style="display: none;"
+											title="birthday">
+									</div>
+								</div>
+
+								<div class="row space-sm-mb" hidden="hidden">
+									<h4>
+										4.Customer Role:<span>Occupational Licensce</span>
+									</h4>
+								</div>
+
+								<div class="row space-sm-mb" hidden="hidden">
+									<h4>
+										5.Type of Customer:<span>Individual</span>
+									</h4>
+								</div>
+
+
+
+
+
+							</div>
+							<div align="center">
+								<button class="my_button" onclick="next(this)">Next</button>
+							</div>
+						</div>
+						<div class="tab-pane" id="panel-part3">
+							<div class="panel-body">
+								<h4>1. Applicant’s Contact Information Section</h4>
+
+
+								<div class="row space-sm-mb">
+									<div class="col-md-5">
+										<fieldset>
+											<legend>
+												<h5>
+													<strong>Are you inside US？</strong>
+												</h5>
+											</legend>
+											<div class="form-radio">
+												<!--    -->
+												<label class="radio-inline"> <input type="radio"
+													name="insideUS" value="Yes" checked id="radioNo_outside">Yes
+												</label> <label class="radio-inline"> <input type="radio"
+													name="insideUS" value="No" id="radioYes_outside">No
+												</label>
+											</div>
+										</fieldset>
+
+									</div>
+								</div>
+								<!--     -->
+
+								<div id="outsideOfUS_DIV">
+									<div class="row space-sm-mb">
+										<!-- <div class="col-md-5">
+											<label>Country:</label> <input type="text"
+												class="line-input form-control" name="country" maxlength=25>
+										</div>
+
+										<div class="col-md-5">
+											<label>Mailling Zone:</label> <input type="text"
+												class="line-input form-control" name="maillingZone"
+												maxlength=150>
+										</div>
+
+										<div class="col-md-5">
+											<label>Mailing Code:</label> <input type="text"
+												class="line-input form-control"
+												onkeyup="this.value=this.value.replace(/\D/g,'')"
+												name="mailingCode" maxlength=10>
+										</div>
+
+										<div class="col-md-5">
+											<label>Postal Features:</label> <input type="text"
+												class="line-input form-control" name="postalFeatures"
+												maxlength=25>
+										</div> -->
+										<div class="col-md-5">
+
+											<label>Enter current mailing address <textarea
+													wrap="virtual" class="line-input form-control"
+													name="currentMaillingAddress"
+													style="text-align: left; width: 500px; height: 111px;" maxlength=203>
+									               	</textarea>
+											</label>
+										</div>
+									</div>
+
+
+
+								</div>
+
+								<div id="withInUS_DIV">
+									<div class="row space-sm-mb">
+										<div class="col-md-5">	
+											<div>
+												<label> Mailing Address  <span class="req"></span>
+												<input type="text"
+													class="line-input form-control" name="mailingAddress1"
+													maxLength=45
+													style="display: inline;">
+												 </label>
+												<span>Ex: 1000 ABC street, Apt 200</span> 
+											</div>
+										</div>
+									</div>
+
+									<div class="row space-sm-mb">
+
+										<div class="col-md-5">
+											<label><span class="req">City</span> <input
+												type="text" class="line-input form-control" name="city"
+												maxLength=25 style="font-weight: normal;"> </label>
+										</div>
+									</div>
+
+									<div class="row space-sm-mb">
+
+										<div class="col-md-5">
+											<label>State &nbsp;<select name="state"
+												style="font-weight: normal;">
+													<option value='AL'>Alabama</option>
+													<option value='AK'>Alaska</option>
+													<option value='AZ'>Arizona</option>
+													<option value='AR'>Arkansas</option>
+													<option value='CA'>California</option>
+													<option value='CO'>Colorado</option>
+													<option value='CT'>Connecticut</option>
+													<option value='DE'>Delaware</option>
+													<option value='FL'>Florida</option>
+													<option value='	GA	'>Georgia</option>
+													<option value='	HI	'>Hawaii</option>
+													<option value='	ID	'>Idaho</option>
+													<option value='	IL	'>Illinois</option>
+													<option value='	IN	'>Indiana</option>
+													<option value='	IA	'>Iowa</option>
+													<option value='	KS	'>Kansas</option>
+													<option value='	KY	'>Kentucky</option>
+													<option value='	LA	'>Louisiana</option>
+													<option value='	ME	'>Maine</option>
+													<option value='	MD	'>Maryland</option>
+													<option value='	MA	'>Massachusetts</option>
+													<option value='	MI	'>Michigan</option>
+													<option value='	MN	'>Minnesota</option>
+													<option value='	MS	'>Mississippi</option>
+													<option value='	MO	'>Missouri</option>
+													<option value='	MT	'>Montana</option>
+													<option value='	NE	'>Nebraska</option>
+													<option value='	NV	'>Nevada</option>
+													<option value='	NH	'>New hampshire</option>
+													<option value='	NJ	'>New jersey</option>
+													<option value='	NM	'>New mexico</option>
+													<option value='	NY	'>New York</option>
+													<option value='	NC	'>North Carolina</option>
+													<option value='	ND	'>North Dakota</option>
+													<option value='	OH	'>Ohio</option>
+													<option value='	OK	'>Oklahoma</option>
+													<option value='	OR	'>Oregon</option>
+													<option value='	PA	'>Pennsylvania</option>
+													<option value='	RI	'>Rhode island</option>
+													<option value='	SC	'>South carolina</option>
+													<option value='	SD	'>South dakota</option>
+													<option value='	TN	'>Tennessee</option>
+													<option value='	TX	' selected="selected">Texas</option>
+													<option value='	UT	'>Utah</option>
+													<option value='	VT	'>Vermont</option>
+													<option value='	VA	'>Virginia</option>
+													<option value='	WA	'>Washington</option>
+													<option value='	WV	'>West Virginia</option>
+													<option value='	WI	'>Wisconsin</option>
+													<option value='	WY	'>Wyoming</option>
+											</select>
+											</label>
+										</div>
+									</div>
+
+									<div class="row space-sm-mb">
+
+										<div style="float: left;" class="col-md-5">
+											<label><span class="req">Zip Code</span> <input
+												type="text"
+												onkeyup="this.value=this.value.replace(/\D/g,'')"
+												style="width: 100px" name="zipCode" maxLength=5
+												class="line-input" title="Zip Code"> <strong>+</strong>
+												<input class="line-input" type="text" style="width: 100px"
+												maxLength=4
+												onkeyup="this.value=this.value.replace(/\D/g,'')"
+												name="zipCodePlus" title="Zip Code Plus"> </label>
+										</div>
+									</div>
+								</div>
+
+								<div id="contact_info_section">
+
+									<div class="row space-sm-mb">
+										<div class="col-md-5">
+											<label>Day/Work Phone<input type="text"
+																		   class="line-input form-control" name="workPhoneNumber"
+																		   id="workPhoneNumber" maxlength=14
+																		   placeholder="(XXX)-XXX-XXXX">
+											</label>
+										</div>
+									</div>
+
+									<div class="row space-sm-mb">
+										<div class="col-md-5">
+											<div class="form-group">
+												<label>Evening/Home Phone <input type="text"
+													class="line-input form-control" name="homePhoneNumber"
+													id="homePhoneNumber" maxlength=14
+													placeholder="(XXX)-XXX-XXXX">
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="row space-sm-mb">
+										<div class="col-md-5">
+											<div class="form-group">
+												<label>Alternative Contact Phone <input type="text"
+																				class="line-input form-control" name="cellPhoneNumber"
+																				id="cellPhoneNumber" maxlength=14
+																				placeholder="(XXX)-XXX-XXXX">
+												</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="row space-sm-mb">
+										<div class="col-md-5" style="width: 100%">
+											<label>Work E-mail Address <input type="text"
+												class="line-input form-control" name="workEmail"
+												id="workEmail" maxLength=250>
+											</label>
+										</div>
+									</div>
+
+									<div class="row space-sm-mb">
+										<div class="col-md-5">
+											<label>Personal E-mail Address<input type="text"
+												class="line-input form-control" name="personalEmail"
+												id="personalEmail" maxLength=250>
+											</label>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+
+							<div align="center">
+								<button class="my_button" onclick="next(this)">Next</button>
+							</div>
+
+						</div>
+						<div class="tab-pane" id="panel-part4">
+							<div class="panel-body">
+								<h4>Applicant’s Qualifications Information Section</h4>
+
+								<div class="row space-sm-mb">
+									<h4>
+										1. Required and completed TCEQ approved occupational training
+										(subject to verification) <a
+											href="https://www.tceq.texas.gov/licensing/training/approvedtrng"
+											target="_blank"> <img alt="help icon"
+											src="images/imgpsh_fullsize.jpeg" width="30px" height="30px">
+										</a>
+									</h4>
+
+									<div class="col-md-12">
+										<table class="table table-bordered"
+											title="Required and Completed TCEQ Approved Occupational Training">
+											<thead>
+												<tr>
+													<th width="30%" scope="col">Training
+														Institution/School/Company</th>
+													<th width="25%" scope="col">Course Title</th>
+													<th width="20%" scope="col">Location(City)</th>
+													<th width="15%" scope="col">Month/Year</th>
+													<th width="15%" scope="col">Credit Hours</th>
+												</tr>
+											</thead>
+
+											<tbody id="training_table_body">
+
+												<tr id="training_init_column">
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[0].trainingInstitution"
+															maxLength=250 title="Training Institution"></textarea></td>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[0].courseTitle"
+															maxLength=50 title="Course Title">
+														</textarea></td>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[0].location" maxLength=40
+															title="Location">
+													    </textarea></td>
+													<td><input type="text" style="height: 50px"
+														class="form-control table-input"
+														name="occupationalTrainingList[0].trainingDate"
+														placeholder="MM/YYYY" maxlength=7
+														title="Please enter a valid date."></td>
+													<td><input type="text" style="height: 50px"
+														class="form-control table-input"
+														name="occupationalTrainingList[0].creditHours"
+														onkeyup="this.value=this.value.replace(/[^\d|\.]/g,'')"
+														maxLength=10 title="Credit Hours"></td>
+												</tr>
+												<tr>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[1].trainingInstitution"
+															maxLength=250 title="Training Institution"></textarea></td>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[1].courseTitle"
+															maxLength=50 title="Course Title"></textarea></td>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[1].location" maxLength=40
+															title="Location"></textarea></td>
+													<td><input type="text" style="height: 50px"
+														class="form-control table-input"
+														name="occupationalTrainingList[1].trainingDate"
+														placeholder="MM/YYYY" maxlength=7
+														title="Please enter a valid date."></td>
+													<td><input type="text" style="height: 50px"
+														class="form-control table-input"
+														name="occupationalTrainingList[1].creditHours"
+														onkeyup="this.value=this.value.replace(/[^\d|\.]/g,'')"
+														maxlength=10 title="Credit Hours"></td>
+												</tr>
+												<tr>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[2].trainingInstitution"
+															maxLength=250 title="Training Institution"></textarea></td>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[2].courseTitle"
+															maxLength=50 title="Course Title"></textarea></td>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[2].location" maxLength=40
+															title="Location"></textarea></td>
+													<td><input type="text" style="height: 50px"
+														class="form-control table-input"
+														name="occupationalTrainingList[2].trainingDate"
+														placeholder="MM/YYYY" maxlength=7
+														title="Please enter a valid date."></td>
+													<td><input type="text"
+														class="form-control table-input" style="height: 50px"
+														name="occupationalTrainingList[2].creditHours"
+														onkeyup="this.value=this.value.replace(/[^\d|\.]/g,'')"
+														maxLength=10 title="Credit Hours"></td>
+												</tr>
+												<tr>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[3].trainingInstitution"
+															maxLength=250 title="Training Institution"></textarea></td>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[3].courseTitle"
+															maxLength=50 title="Course Title"></textarea></td>
+													<td><textarea class="form-control table-input"
+															name="occupationalTrainingList[3].location" maxLength=40
+															title="Location"></textarea></td>
+													<td><input type="text" style="height: 50px"
+														class="form-control table-input"
+														name="occupationalTrainingList[3].trainingDate"
+														placeholder="MM/YYYY" maxlength=7
+														title="Please enter a valid date."></td>
+													<td><input type="text" style="height: 50px"
+														class="form-control table-input"
+														name="occupationalTrainingList[3].creditHours"
+														onkeyup="this.value=this.value.replace(/[^\d|\.]/g,'')"
+														maxLength=10 title="Credit Hours"></td>
+												</tr>
+											</tbody>
+										</table>
+
+										<button class="my_button" id="addNewLine">Add</button>
+									</div>
+								</div>
+
+								<div class="row space-sm-mb">
+									<h4>
+										2. Other current or previous professional and occupational
+										licenses you hold or have held, relevant to this license
+										application. <a
+											href="https://www.tceq.texas.gov/licensing/training/approvedtrng"
+											target="_blank"> <img alt="help icon"
+											src="images/imgpsh_fullsize.jpeg" width="30px" height="30px">
+										</a>
+									</h4>
+
+									<div class="col-md-5">
+										<label style="width: 100%">Type and/or Class: <input
+											type="text" class="line-input form-control"
+											name="occupationalLicenses.type" maxLength=100>
+										</label>
+
+									</div>
+
+									<div class="col-md-5">
+										<label style="width: 100%">Issuing Agency: <input
+											type="text" class="line-input form-control"
+											name="occupationalLicenses.issuingAgency" maxLength=100>
+										</label>
+									</div>
+
+									<div class="col-md-5">
+										<label style="width: 100%">Issuance Date: <input
+											type="text" class="line-input form-control"
+											name="occupationalLicenses.issuanceDate"
+											placeholder="MM/DD/YYYY" maxlength=10>
+										</label>
+									</div>
+
+									<div class="col-md-5">
+										<label style="width: 100%">Expiration Date:<input
+											type="text" class="line-input form-control"
+											name="occupationalLicenses.expirationDate"
+											placeholder="MM/DD/YYYY" maxlength=10>
+										</label>
+									</div>
+								</div>
+
+								<div class="row space-sm-mb">
+									<h4>3. Education</h4>
+									<div class="col-md-10">
+										<label>What year did you graduate or obtain your GED?
+											<input type="text" class="line-input form-control"
+											name="educationBackground.educationYearOfGraduation"
+											onkeyup="this.value=this.value.replace(/\D/g,'')" maxLength=4
+											placeholder="YYYY">
+										</label>
+									</div>
+
+									<div class="col-md-12 space-sm-mb">
+										<fieldset style="margin-bottom: 0">
+											<legend>
+												<h5>
+													<strong>Bubble ONE, indicating highest level of
+														education obtained:</strong>
+												</h5>
+											</legend>
+											<div class="form-radio">
+												<label class="radio-inline"> <input type="radio"
+													name="educationBackground.highestLevelOfEducation"
+													value="HSGED">HS/GED
+												</label> <label class="radio-inline"> <input type="radio"
+													name="educationBackground.highestLevelOfEducation"
+													value="BACHELORS">Bachelors
+												</label> <label class="radio-inline"> <input type="radio"
+													name="educationBackground.highestLevelOfEducation"
+													value="MASTERS">Masters
+												</label> <label class="radio-inline"> <input type="radio"
+													name="educationBackground.highestLevelOfEducation"
+													value="DOCTORATE">Doctorate
+												</label> <label class="radio-inline"> <input type="radio"
+													name="educationBackground.highestLevelOfEducation"
+													value="OTHER">Other
+												</label>
+
+											</div>
+										</fieldset>
+									</div>
+
+									<div class="col-md-10">
+										<label style="width: 100%">Number of semester hours
+											completed: <input
+											onkeyup="this.value=this.value.replace(/[^\d|\.]/g,'')"
+											class="line-input form-control"
+											name="educationBackground.numberOfSemesterhours" maxLength=10>
+										</label>
+									</div>
+
+									<div class="col-md-10">
+										<label style="width: 100%">Name of College or
+											University:<input type="text" class="line-input form-control"
+											name="educationBackground.collegeName" maxLength=50>
+										</label>
+									</div>
+
+									<div class="col-md-10">
+										<label style="width: 100%">Major/Minor: <input
+											type="text" class="line-input form-control"
+											name="educationBackground.major" maxLength=100>
+										</label>
+									</div>
+									<div class="col-md-12">
+										<p>Attached transcript is required, if using college hours
+											or degree for experience substitution.</p>
+									</div>
+								</div>
+
+
+
+							</div>
+							<div align="center">
+								<button class="my_button" onclick="next(this)">Next</button>
+							</div>
+						</div>
+						<div class="tab-pane" id="panel-part5">
+							<div class="panel-body">
+								<h4>Supporting Document’s Upload Section</h4>
+
+								<p class="col-md-12"></p>
+								<div class="row space-sm-mb">
+									<div class="col-md-12">
+										<h4>1. Required Attachments</h4>
+										<h5>
+											<strong>Description of attachments:</strong>
+										</h5>
+										<div class="form-radio">
+											<label class="radio-inline" style="width: 100%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="Criminal History Notification Form"> Criminal History Notification Form (as required for all Applications)
+											</label>
+											<label class="radio-inline" style="width: 100%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="Application Supplemental Form"> Application Supplemental Form (as required by license)
+											</label>
+											<label class="radio-inline" style="width: 100%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="Military Affidavit and Records"> Military Affidavit and Records (if applicable)
+											</label>
+											<label class="radio-inline" style="width: 100%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="Reference Form(s)"> Reference Form(s) (as required by license)
+											</label>
+										</div>
+									</div>
+									<p class="col-md-12"></p>
+									<div class="col-md-12">
+										<h4>2. Additional Attachments</h4>
+										<h5>
+											<strong>Description of attachments:</strong>
+										</h5>
+										<div class="form-radio">
+											<label class="radio-inline" style="width: 100%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="High School Diploma or GED"> High School Diploma or GED
+											</label>
+											<label class="radio-inline" style="width: 100%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="Special Accommodations Request Form"> Special Accommodations Request Form
+											</label>
+											<label class="radio-inline" style="width: 100%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="College Transcript(s)"> College Transcript(s)
+											</label>
+											<label class="radio-inline" style="width: 100%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="Traning Certificate(s)"> Training Certificate(s)
+											</label>
+											<label class="radio-inline" style="width: 100%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="Out of State License"> Out of State License
+											</label>
+											<label class="radio-inline" style="width: 100%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="Course Registration Confirmation"> Course Registration Confirmation (if applying for a Conditional Approval)
+											</label>
+											<!--
+											<label class="radio-inline" style="width: 32%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="ADA/Oral Exam"> ADA/Oral Exam Written Request
+											</label>
+											<label class="radio-inline" style="width: 32%"> <input
+													type="checkbox" name="attachementsDescription"
+													value="Military Record(s)"> Military Record (s)
+											</label>
+											-->
+											<label class="radio-inline" style="width: 32%"> <input
+													type="checkbox" name="attachementsDescription_other"
+													id="attachementsDescription_other" value="other"> Other &nbsp;<input type="text" class="line-input"
+															style="size: 100px" name="attachementsDescriptionAnother"
+															maxlength=40 title="Attachements Description Another">
+											</label>
+										</div>
+									</div>
+
+									<p class="col-md-12"></p>
+
+									<h5>
+										<strong>&nbsp;&nbsp;&nbsp;Attachments :</strong>
+									</h5>
+								</div>
+								<p id="fileerrorTipMsg" class="fileerrorTip"></p>
+								<div align="left">
+									<table id="fileupload_showfiles">
+									</table>
+								</div>
+
+								<div align="left">
+									<input type="button" value="Add" id="addNewAttchement"
+										class="my_button" name="uploadFileVerify"> <strong
+										id="selectFileInit">No file selected. </strong>
+									<!--     -------------------------------     -->
+								</div>
+
+							</div>
+							<div align="center">
+								<button class="my_button" onclick="next(this)">Next</button>
+							</div>
+						</div>
+						<div class="tab-pane" id="panel-part6">
+							<div class="panel-body">
+
+								<h4>1. Fees Information Section</h4>
+								<div class="row space-sm-mb">
+									<div class="col-md-12 ">
+										<h5 style="font-weight: bold;">In this section you will
+											be required to pay the necessary fees to submit the
+											application. Please read the following instructions
+											carefully.</h5>
+										<br>
+										<ol style="padding-left: 25px;" type='I'>
+											<li>The following information has been prepopulated for
+												you.
+												<ol class="ol-li-ol">
+													<li>License type (as selected in the type of license
+														section)</li>
+													<li>Fee for the license</li>
+												</ol>
+											</li>
+											<li>Steps to pay the Fees (If you have already made a payment on ePay and have a valid voucher number, you may enter the voucher number in without going back to ePay.)
+												<ol class="ol-li-ol">
+													<li>Click on the “Go to ePay” button</li>
+													<li>The ePay website will open in a separate window</li>
+													<li>On the ePay home page, click the "Other" link
+														at the bottom of the page under "Option 3. View List of
+														Fees By Media Type" to find Occupational Licensing
+														options. Once on the "Other" page, under Occupational
+														Licensing, select the type of license you are applying
+														for. Follow the ePay instructions to make the payment</li>
+													<li>Make a note of the voucher number provided by ePay</li>
+													<span class="reminder_text">Note: It is very
+														important that you make a note of the voucher number
+														correctly as this voucher number will be needed for
+														submission within the online application</span>
+												</ol>
+											</li>
+											<li>Type the voucher number correctly in the voucher
+												number box and click the ‘Next’ button
+												<ol class="ol-li-ol">
+													<li>If the voucher number is correct and has not been
+														used previously, you will be navigated to the affidavit
+														section where you can submit the online application</li>
+													<li>If the voucher number is not correct or it has
+														already been used, the system will show an error and will
+														not allow you to proceed further until you submit a valid
+														voucher number.</li>
+												</ol>
+											</li>
+										</ol>
+										<span class="reminder_text">Note: For US Military
+											Veterans: If you are a United States military veteran and you
+											are applying for an initial license with the TCEQ, you are
+											exempt from paying the initial application processing fee.
+											Please check the box United States military veteran, upload
+											the TCEQ Military Affidavit, and form DD-214 Certificate of
+											Release or Discharge from Active Duty or DD-220 Active Duty
+											Report paperwork in the Supporting documents section. To be
+											eligible to receive this exemption you must have documented
+											proof of United States Military Veterans, you are not
+											eligible for a fee exception if you served in the military of
+											any other country.</span>
+
+										<table style="padding-left: 20px" title="Title">
+											<tr>
+												<td width="500px">
+													<h5>Type Of Application:</h5>
+												</td>
+												<td>
+													<div class="DivSelect width5">
+
+														<select id="licenceType" onChange="getAmount(this.value)"
+															onload="getAmount(this.value)" readonly="readonly"
+															class="SelectList width7" title="Type Of Application">
+															<option value="BAT">BACKFLOW PREVENTION ASSEMBLY
+																TESTER LICENSE (BPAT)</option>
+															<option value="CSI">CUSTOMER SERVICE INSPECTOR
+																LICENSE (CSI)</option>
+															<option value="IIR">LANDSCAPE
+																IRRIGATOR/TECHNICIAN/INSPECTOR LICENSE</option>
+															<option value="CAS">LPST CORRECTIVE ACTION
+																SPECIALIST</option>
+															<option value="PPM">LPST PROJECT MANAGER LICENSE</option>
+															<option value="IRR">LANDSCAPE
+																IRRIGATOR/TECHNICIAN/INSPECTOR LICENSE</option>
+															<option value="STT">MUNICIPAL SOLID WASTE (MSW)</option>
+															<option value="OIR">OSSF INSTALLER/DESIGNATED
+																REPRESENTATIVE/SITE EVALUATOR LICENSE/APPRENTICE</option>
+															<option value="AMP">OSSF MAINTENANCE
+																PROVIDER/TECHNICIAN LICENSE</option>
+															<option value="SLC">UST CONTRACTORS LICENSE</option>
+															<option value="SLI">UST INSTALLER/ON-SITE
+																SUPERVISOR LICENSE</option>
+															<option value="WQC">WASTEWATER OPERATOR LICENSE</option>
+															<option value="WSC">WATER OPERATOR LICENSE</option>
+															<option value="ROC">WATER TREATMENT SPECIALIST
+																LICENSE</option>
+														</select>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td><h5>Amount:</h5></td>
+												<td><span>$</span> <strong id="fee">0.00</strong> <input
+													type="button" value="Go to ePay" onclick="payment()"
+													class="my_button" style="margin-left: 20px"
+													id="goToEpayBtn"></td>
+											</tr>
+											<tr>
+												<td><h5>Voucher Number:</h5></td>
+												<td><input id="voucherNumber" name="voucherNumber"
+													maxLength=15 title="Voucher Number"></td>
+											</tr>
+										</table>
+
+										<div class="form-radio"
+											style="font-size: 16px; margin-top: 20px">
+											<label class="radio-inline"
+												style="width: 50%; margin-left: 0; padding-left: 0;"><input
+												type="checkbox" name="militaryVeteran" value="YES">
+												United States military veteran</label>
+										</div>
+
+
+										<p id="check_remind_message"></p>
+									</div>
+								</div>
+
+							</div>
+							<div align="center">
+								<button class="my_button" id="feePaidNext"
+									onclick="checkVoucherNumber(this)">Next</button>
+							</div>
+						</div>
+						<div class="tab-pane" id="panel-part7">
+							<div class="panel-body">
+
+								<div class="row space-sm-mb">
+									<span><h4>1. Affidavit</h4></span>
+									<div>
+										<div class="form-radio col-md-12">
+											<label class="radio-inline"
+												style="width: 100%; padding-left: 0">
+												I hereby certify that this application and any attachments
+												contain no willful or negligent misrepresentations or
+												falsifications and that the information given is true and
+												complete. I am aware that there are significant penalties
+												for submitting false information, including rejection of my
+												application, revocation of any license issued as a result of
+												this application, and the possibility of fine and
+												imprisonment for known violations.
+											</label>
+										</div>
+										<div class="form-radio col-md-12">
+											<label id="affiadavitradioinline" class="radio-inline"
+												   style="width: 100%; padding-left: 0"> <input
+													type="checkbox" name="affiadavit.affidavit" value="YES">
+												<B class="req">By checking this box, I acknowledge that I have read and understood this affidavit.</B>
+											</label>
+										</div>
+									</div>
+
+									<span class="col-md-12"><br></span>
+
+									<div class="col-md-6">
+										<label style="width: 100%"><span class="req">Signature:</span>
+											<input type="text" class="line-input form-control"
+											id="affiadavitsignature" name="affiadavit.signature"
+											maxLength=60
+											onkeyup="this.value=this.value.replace(/\d/g,'')"> </label>
+										<!--
+										<span style="width: 100%">Entering your name in the Signature box constitutes an electronic signature and is legally equivalent to your written signature.</span>
+									    -->
+									</div>
+									<div class="col-md-6">
+										<label style="width: 100%">Date: <input type="text"
+											class="line-input form-control" name="affiadavit.date"
+											placeholder="MM/DD/YYYY" maxlength=10>
+										</label>
+									</div>
+									<div class="col-md-12">
+										<p>
+											Entering your name in the Signature box constitutes an electronic signature and is legally equivalent to your written signature.
+										</p>
+										<p>
+											<strong>NOTE: This agency acknowledges and complies
+												with the Americans with Disabilities Act.</br>TCEQ is an equal
+												opportunity employer and does not discriminate on the basis
+												of race, color, religion, sex, national origin, age or
+												disability in employment or in the provision of services,
+												programs, or activities.
+											</strong>
+										</p>
+										<p>
+											<strong>Please verify the information you provided
+												before you submit. </strong>
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<br>
+							<div align="center"><span id="reqAffidavit" class="req2"></span></div>
+
+							<span class="col-md-12"><br></span>
+							<div class="col-md-10 " align="center">
+								<input id="submitform" type="button" value="Submit"
+									class="my_button" onmouseover="onMouseOver(this)"
+									onmouseout="onMouseOut(this)">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="footer">
+			<p>
+				<a href="http://www.tceq.texas.gov/help">Site Help</a> | <a
+					href="http://www.tceq.texas.gov/help/policies/disclaimer_policy.html">Disclaimer</a>
+				| <a href="http://www.tceq.texas.gov/help/policies/index.html">Web
+					Policies</a> | <a
+					href="http://www.tceq.texas.gov/help/policies/accessibility_policy.html">Accessibility</a>
+				| <a href="http://www.tceq.texas.gov/agency/compact.html">Our
+					Compact with Texans</a> | <a
+					href="http://www.tceq.texas.gov/response/security/index.html">TCEQ
+					Homeland Security</a> | <a
+					href="http://www.tceq.texas.gov/about/directory/">Contact Us</a> <br />
+				Statewide Links: <a href="http://www.texas.gov">Texas.gov</a> | <a
+					href="http://www.texashomelandsecurity.org/">Texas Homeland
+					Security</a> | <a href="http://www2.tsl.state.tx.us/trail/">TRAIL
+					Statewide Archive</a> | <a
+					href="http://veterans.portal.texas.gov/en/Pages/default.aspx">Texas
+					Veterans Portal</a>
+			</p>
+			<p>
+				<br /> &copy; 2002-2016 Texas Commission on Environmental Quality
+			</p>
+		</div>
+
+	</div>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
